@@ -1,4 +1,6 @@
 </main>
+  </div>
+</div>
 <nav class="nb-tabbar">
   <div class="nb-tabbar__inner">
     <?php foreach ($__tabs as [$__href, $__label]): ?>

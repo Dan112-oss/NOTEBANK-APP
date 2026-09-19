@@ -26,23 +26,27 @@ $__tabs = [
 <link rel="stylesheet" href="<?= asset_url('css/student.css') ?>">
 </head>
 <body>
-<header class="nb-student__header">
-  <div class="nb-student__header-inner">
+<div class="nb-student">
+  <aside class="nb-student__sidebar" id="nbStudentSidebar">
     <a href="../index.php" class="nb-student__brand" title="Back to Note Bank home">
       <img src="<?= asset_url('images/logo-mark-48.png') ?>" alt="">
       <span>Note Bank</span>
     </a>
-    <nav class="nb-student__nav">
+    <nav class="nb-student__sidenav">
       <?php foreach ($__tabs as [$__href, $__label]): ?>
         <a href="<?= e($__href) ?>" class="<?= $__current === $__href ? 'is-active' : '' ?>"><?= e($__label) ?></a>
       <?php endforeach; ?>
     </nav>
-    <div class="nb-student__header-actions">
-      <a href="../index.php" class="nb-student__signout">Back to site</a>
-      <a href="cart.php" class="nb-cart-pill">Cart <span class="nb-cart-pill__count"><?= (int) $__cartCount ?></span></a>
-      <a href="logout.php" class="nb-student__signout">Log out</a>
+    <div class="nb-student__sidefoot">
+      <a href="logout.php">Log out</a>
     </div>
-  </div>
-</header>
-<main class="nb-student__main">
-  <?php require __DIR__ . '/flash.php'; ?>
+  </aside>
+  <div class="nb-student__col">
+    <header class="nb-student__topbar">
+      <span class="nb-student__topbar-title"><?= e($pageTitle ?? 'Note Bank') ?></span>
+      <div class="nb-student__header-actions">
+        <a href="cart.php" class="nb-cart-pill">Cart <span class="nb-cart-pill__count"><?= (int) $__cartCount ?></span></a>
+      </div>
+    </header>
+    <main class="nb-student__main">
+      <?php require __DIR__ . '/flash.php'; ?>

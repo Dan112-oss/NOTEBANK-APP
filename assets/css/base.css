@@ -89,7 +89,7 @@ img { max-width: 100%; display: block; }
 
 
 :focus-visible {
-  outline: 3px solid var(--nb-orange-500);
+  outline: 3px solid var(--nb-gold-500);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -119,8 +119,8 @@ img { max-width: 100%; display: block; }
 .nb-btn:active { transform: translateY(1px); }
 .nb-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 
-.nb-btn--primary { background: var(--nb-orange-500); color: #fff; box-shadow: var(--nb-shadow-sm); }
-.nb-btn--primary:hover { background: var(--nb-orange-600); text-decoration: none; }
+.nb-btn--primary { background: var(--nb-gold-500); color: #211405; box-shadow: var(--nb-shadow-sm); }
+.nb-btn--primary:hover { background: var(--nb-gold-600); text-decoration: none; }
 
 .nb-btn--navy { background: var(--nb-navy-800); color: #fff; }
 .nb-btn--navy:hover { background: var(--nb-navy-900); text-decoration: none; }

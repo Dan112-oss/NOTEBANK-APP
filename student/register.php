@@ -157,6 +157,7 @@ $levels = $db->query("SELECT id, name, department_id FROM levels WHERE status='a
       <button type="submit" class="nb-btn nb-btn--primary nb-btn--block" data-loading-text="Creating account…">Create account</button>
     </form>
     <p class="nb-auth__foot">Already have an account? <a href="login.php">Sign in</a></p>
+    <p class="nb-auth__foot"><a href="<?= base_url('index.php') ?>">← Back to Note Bank</a></p>
   </div>
 </div>
 <script src="<?= asset_url('js/main.js') ?>"></script>
