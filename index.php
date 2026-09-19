@@ -17,8 +17,8 @@ $universityCount = (int) $db->query("SELECT COUNT(*) FROM universities WHERE sta
 <meta name="description" content="Note Bank is where Landmark University students deposit and withdraw verified lecture notes and past questions, unlocked the moment payment is confirmed.">
 <link rel="icon" href="<?= asset_url('images/favicon-32.png') ?>" type="image/png">
 <link rel="apple-touch-icon" href="<?= asset_url('images/apple-touch-icon.png') ?>">
-<link rel="stylesheet" href="<?= asset_url('css/base.css') ?>">
-<link rel="stylesheet" href="<?= asset_url('css/site.css') ?>">
+<link rel="stylesheet" href="<?= asset_url('css/base.css') ?>?v=2">
+<link rel="stylesheet" href="<?= asset_url('css/site.css') ?>?v=2">
 </head>
 <body>
 
