@@ -24,7 +24,15 @@ function redirect(string $path): never
 
 function base_url(string $path = ''): string 
 {
-    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    // Render (and most PaaS platforms) terminate HTTPS at an edge proxy and
+    // forward plain HTTP internally, signalling the original scheme via
+    // X-Forwarded-Proto instead of $_SERVER['HTTPS']. Check both, or every
+    // generated URL comes back http:// and gets blocked as mixed content
+    // on a page actually served over https://.
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
+        || (($_SERVER['SERVER_PORT'] ?? '') === '443');
+    $scheme = $isHttps ? 'https' : 'http';
     $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
     $baseUrl = $scheme . '://' . $host;
     return rtrim($baseUrl, '/') . '/' . ltrim($path, '/');
