@@ -33,19 +33,22 @@ require __DIR__ . '/../includes/partials/student_header.php';
 </div>
 
 <div class="nb-stat-grid">
-  <a href="library.php" class="nb-card nb-stat-card">
+  <a href="library.php" class="nb-card nb-stat-card nb-stat-card--mint">
+    <div class="nb-stat-card__icon">✓</div>
     <div class="nb-stat-card__label">Library</div>
     <div class="nb-stat-card__value"><?= $libraryCount ?></div>
     <div class="nb-stat-card__hint">documents unlocked</div>
   </a>
-  <a href="orders.php" class="nb-card nb-stat-card">
+  <a href="orders.php" class="nb-card nb-stat-card nb-stat-card--gold">
+    <div class="nb-stat-card__icon">!</div>
     <div class="nb-stat-card__label">Pending Orders</div>
     <div class="nb-stat-card__value nb-stat-card__value--accent"><?= $pendingOrders ?></div>
     <div class="nb-stat-card__hint">awaiting payment/verification</div>
   </a>
-  <a href="courses.php" class="nb-card nb-stat-card">
+  <a href="courses.php" class="nb-card nb-stat-card nb-stat-card--plum">
+    <div class="nb-stat-card__icon">→</div>
     <div class="nb-stat-card__label">Catalogue</div>
-    <div class="nb-stat-card__value">Browse →</div>
+    <div class="nb-stat-card__value">Browse</div>
     <div class="nb-stat-card__hint">find notes &amp; past questions</div>
   </a>
 </div>

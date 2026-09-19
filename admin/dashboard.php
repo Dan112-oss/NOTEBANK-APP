@@ -35,27 +35,33 @@ require __DIR__ . '/../includes/partials/admin_header.php';
 ?>
 
 <div class="nb-kpi-grid">
-  <a href="students.php" class="nb-kpi">
+  <a href="students.php" class="nb-kpi nb-kpi--plum">
+    <div class="nb-kpi__icon">S</div>
     <div class="nb-kpi__label">Students</div>
     <div class="nb-kpi__value"><?= number_format($stats['students']) ?></div>
   </a>
-  <a href="courses.php" class="nb-kpi">
+  <a href="courses.php" class="nb-kpi nb-kpi--plum">
+    <div class="nb-kpi__icon">C</div>
     <div class="nb-kpi__label">Courses</div>
     <div class="nb-kpi__value"><?= number_format($stats['courses']) ?></div>
   </a>
-  <a href="documents.php" class="nb-kpi">
+  <a href="documents.php" class="nb-kpi nb-kpi--plum">
+    <div class="nb-kpi__icon">D</div>
     <div class="nb-kpi__label">Documents</div>
     <div class="nb-kpi__value"><?= number_format($stats['documents']) ?></div>
   </a>
-  <a href="payments.php" class="nb-kpi">
+  <a href="payments.php" class="nb-kpi nb-kpi--gold">
+    <div class="nb-kpi__icon">!</div>
     <div class="nb-kpi__label">Pending Payments</div>
     <div class="nb-kpi__value nb-kpi__value--orange"><?= number_format($stats['pending_payments']) ?></div>
   </a>
-  <a href="orders.php" class="nb-kpi">
+  <a href="orders.php" class="nb-kpi nb-kpi--mint">
+    <div class="nb-kpi__icon">✓</div>
     <div class="nb-kpi__label">Approved Orders</div>
     <div class="nb-kpi__value"><?= number_format($stats['approved_orders']) ?></div>
   </a>
-  <a href="reports.php" class="nb-kpi">
+  <a href="reports.php" class="nb-kpi nb-kpi--mint">
+    <div class="nb-kpi__icon">₣</div>
     <div class="nb-kpi__label">Revenue (Approved)</div>
     <div class="nb-kpi__value nb-kpi__value--orange"><?= e(format_money($stats['revenue'])) ?></div>
   </a>
