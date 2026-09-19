@@ -1,0 +1,6 @@
+# Protected storage — originals, previews, processed downloads and
+# payment receipts must never be reachable directly by URL. All access
+# goes through api/preview.php, api/downloads.php, admin/view-proof.php
+# and admin/invoice.php, which check authentication, ownership and
+# entitlements before streaming a file.
+Require all denied

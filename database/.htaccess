@@ -1,0 +1,2 @@
+# schema.sql must never be downloadable.
+Require all denied

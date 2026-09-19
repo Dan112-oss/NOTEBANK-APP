@@ -1,0 +1,22 @@
+# Note Bank — root .htaccess
+# Requires mod_rewrite, mod_headers (both standard on XAMPP/Apache).
+
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block direct access to dotfiles (.env, .git, etc.) anywhere under the app.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Never serve raw PHP config/include source if misconfigured — belt and
+# braces alongside the per-directory .htaccess files.
+<FilesMatch "\.(sql|log)$">
+    Require all denied
+</FilesMatch>

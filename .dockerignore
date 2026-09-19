@@ -1,0 +1,14 @@
+.env
+.git
+vendor/
+storage/original/*
+storage/preview/*
+storage/processed/*
+storage/receipts/*
+!storage/original/.gitkeep
+!storage/preview/.gitkeep
+!storage/processed/.gitkeep
+!storage/receipts/.gitkeep
+storage/php-error.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+
+  --nb-navy-900: #071B40;
+  --nb-navy-800: #0B2559;
+  --nb-navy-700: #14336F;
+  --nb-navy-100: #E7ECF7;
+  --nb-orange-600: #E4670A;
+  --nb-orange-500: #F97509;
+  --nb-orange-100: #FFE9D6;
+
+
+  --nb-paper: #F5F7FB;
+  --nb-surface: #FFFFFF;
+  --nb-ink: #171B26;
+  --nb-muted: #5B6472;
+  --nb-faint: #8A93A3;
+  --nb-line: #E3E7EF;
+  --nb-line-strong: #CBD2E0;
+
+
+  --nb-success: #1B8A5A;
+  --nb-success-bg: #E4F5EC;
+  --nb-warning: #B36B00;
+  --nb-warning-bg: #FFF1DC;
+  --nb-danger: #C23B3B;
+  --nb-danger-bg: #FBE9E9;
+  --nb-info: #2461C0;
+  --nb-info-bg: #E8F0FD;
+
+
+  --nb-font-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --nb-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nb-font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+
+
+  --nb-radius-sm: 8px;
+  --nb-radius-md: 14px;
+  --nb-radius-lg: 22px;
+  --nb-shadow-sm: 0 1px 2px rgba(11, 37, 89, 0.06), 0 1px 1px rgba(11, 37, 89, 0.04);
+  --nb-shadow-md: 0 8px 24px rgba(11, 37, 89, 0.10);
+  --nb-shadow-lg: 0 20px 48px rgba(11, 37, 89, 0.16);
+  --nb-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--nb-paper);
+  color: var(--nb-ink);
+  font-family: var(--nb-font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--nb-font-display); font-weight: 600; line-height: 1.15; margin: 0 0 0.5em; color: var(--nb-navy-800); }
+h1 { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.8rem); }
+h2 { font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 1em; }
+a { color: var(--nb-navy-700); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+.nb-mono { font-family: var(--nb-font-mono); letter-spacing: 0.01em; }
+
+.nb-page-head { margin-bottom: 24px; }
+.nb-page-head h1 { margin-bottom: 4px; }
+.nb-subtitle { color: var(--nb-muted); margin: 0; }
+
+
+:focus-visible {
+  outline: 3px solid var(--nb-orange-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.nb-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--nb-font-body);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--nb-radius-sm);
+  padding: 11px 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s var(--nb-ease), box-shadow 0.12s var(--nb-ease), background-color 0.12s var(--nb-ease);
+  line-height: 1.2;
+}
+.nb-btn:active { transform: translateY(1px); }
+.nb-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+.nb-btn--primary { background: var(--nb-orange-500); color: #fff; box-shadow: var(--nb-shadow-sm); }
+.nb-btn--primary:hover { background: var(--nb-orange-600); text-decoration: none; }
+
+.nb-btn--navy { background: var(--nb-navy-800); color: #fff; }
+.nb-btn--navy:hover { background: var(--nb-navy-900); text-decoration: none; }
+
+.nb-btn--ghost { background: transparent; color: var(--nb-navy-800); border-color: var(--nb-line-strong); }
+.nb-btn--ghost:hover { background: var(--nb-navy-100); text-decoration: none; }
+
+.nb-btn--danger { background: var(--nb-danger); color: #fff; }
+.nb-btn--danger:hover { background: #a52f2f; text-decoration: none; }
+
+.nb-btn--sm { padding: 7px 14px; font-size: 0.82rem; }
+.nb-btn--block { width: 100%; }
+
+/* ---------- Forms ---------- */
+.nb-field { margin-bottom: 18px; }
+.nb-label { display: block; font-weight: 600; font-size: 0.86rem; margin-bottom: 6px; color: var(--nb-navy-800); }
+.nb-hint { font-size: 0.8rem; color: var(--nb-muted); margin-top: 5px; }
+.nb-error-text { font-size: 0.8rem; color: var(--nb-danger); margin-top: 5px; }
+
+.nb-input, .nb-select, .nb-textarea {
+  width: 100%;
+  font-family: var(--nb-font-body);
+  font-size: 0.95rem;
+  padding: 11px 13px;
+  border: 1.5px solid var(--nb-line-strong);
+  border-radius: var(--nb-radius-sm);
+  background: #fff;
+  color: var(--nb-ink);
+  transition: border-color 0.12s var(--nb-ease), box-shadow 0.12s var(--nb-ease);
+}
+.nb-input:focus, .nb-select:focus, .nb-textarea:focus {
+  border-color: var(--nb-navy-700);
+  box-shadow: 0 0 0 4px var(--nb-navy-100);
+  outline: none;
+}
+.nb-input.nb-input--error, .nb-select.nb-input--error { border-color: var(--nb-danger); }
+.nb-textarea { resize: vertical; min-height: 100px; }
+
+/* ---------- Cards ---------- */
+.nb-card {
+  background: var(--nb-surface);
+  border: 1px solid var(--nb-line);
+  border-radius: var(--nb-radius-md);
+  box-shadow: var(--nb-shadow-sm);
+}
+
+/* ---------- Stamp badges — the signature device ----------
+   A rotated, ink-stamped look for order/payment status, echoing the
+   watermark stamped onto every protected document. Same idea, two
+   places: proof that a thing has been checked and marked genuine. */
+.nb-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--nb-font-mono);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  white-space: nowrap;
+}
+.nb-stamp::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.nb-stamp--pending { color: var(--nb-warning); background: var(--nb-warning-bg); }
+.nb-stamp--submitted { color: var(--nb-info); background: var(--nb-info-bg); }
+.nb-stamp--approved { color: var(--nb-success); background: var(--nb-success-bg); }
+.nb-stamp--rejected { color: var(--nb-danger); background: var(--nb-danger-bg); }
+.nb-stamp--unlocked { color: var(--nb-navy-800); background: var(--nb-navy-100); }
+
+.nb-stamp--rotated {
+  transform: rotate(-6deg);
+  border-width: 2px;
+  font-size: 0.78rem;
+  padding: 7px 16px;
+}
+
+
+.nb-alert {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 13px 16px;
+  border-radius: var(--nb-radius-sm);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.nb-alert--success {
+   background: var(--nb-success-bg); color: #0e5c3a; border-color: #bfe6d1; 
+}
+.nb-alert--error {
+   background: var(--nb-danger-bg); color: #7d2626; border-color: #f0c3c3; 
+}
+.nb-alert--info {
+   background: var(--nb-info-bg); color: #1d4a90; border-color: #c6dafb; 
+}
+
+.nb-empty {
+  text-align: center;
+  padding: 56px 20px;
+  color: var(--nb-muted);
+}
+.nb-empty h3 {
+   color: var(--nb-navy-800); margin-bottom: 6px; 
+}
+
+.nb-skeleton {
+  background: linear-gradient(90deg, #eef1f7 25%, #e4e8f1 37%, #eef1f7 63%);
+  background-size: 400% 100%;
+  animation: nb-shimmer 1.4s ease infinite;
+  border-radius: var(--nb-radius-sm);
+}
+@keyframes nb-shimmer {
+   0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } 
+}
+
+
+.nb-table {
+   width: 100%; border-collapse: collapse; font-size: 0.88rem; 
+}
+.nb-table th {
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nb-muted);
+  padding: 10px 14px;
+  border-bottom: 1.5px solid var(--nb-line);
+}
+.nb-table td {
+   padding: 13px 14px; border-bottom: 1px solid var(--nb-line); vertical-align: middle; 
+}
+.nb-table tbody tr:hover {
+   background: var(--nb-navy-100); 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

@@ -1,0 +1,2 @@
+# Shared PHP libraries — meant to be require()'d, never requested directly.
+Require all denied
