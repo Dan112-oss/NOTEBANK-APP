@@ -29,6 +29,21 @@
   --nb-info: #2461C0;
   --nb-info-bg: #E8F0FD;
 
+  /* ---- Homepage-only palette: "study lamp at 2am" — warm gold glow
+     against a plum-black, not flat black, with a mint accent reserved
+     for unlocked/verified states. Scoped to index.php; the rest of the
+     app keeps the navy/orange tokens above. ---- */
+  --nb-plum-950: #0E0C1A;
+  --nb-plum-900: #17132A;
+  --nb-plum-800: #221C3D;
+  --nb-plum-glow: #3A2E63;
+  --nb-gold-500: #E8A33D;
+  --nb-gold-600: #C9832A;
+  --nb-gold-100: #FBE7C6;
+  --nb-mint-500: #46D6A6;
+  --nb-glass-line: rgba(255, 255, 255, 0.14);
+  --nb-glass-fill: rgba(255, 255, 255, 0.06);
+
 
   --nb-font-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
   --nb-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
