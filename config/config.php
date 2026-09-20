@@ -110,7 +110,15 @@ if (IS_PRODUCTION) {
     error_reporting(E_ALL);
 }
 ini_set('log_errors', '1');
-ini_set('error_log', BASE_PATH . '/storage/php-error.log');
+// On a platform like Render, the filesystem is ephemeral and there's no
+// way to tail a log file inside the container — but anything written to
+// stderr shows up live in the platform's own Logs tab. Locally (XAMPP),
+// keep logging to the file since there's no such log viewer to catch it.
+if (getenv('PORT') !== false) {
+    ini_set('error_log', 'php://stderr');
+} else {
+    ini_set('error_log', BASE_PATH . '/storage/php-error.log');
+}
 
 date_default_timezone_set('Africa/Lagos');
 
