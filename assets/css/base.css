@@ -83,6 +83,15 @@ img { max-width: 100%; display: block; }
 
 .nb-mono { font-family: var(--nb-font-mono); letter-spacing: 0.01em; }
 
+.nb-icon { flex: none; vertical-align: -3px; }
+
+.nb-avatar {
+  width: 34px; height: 34px; border-radius: 50%; flex: none;
+  background: var(--nb-plum-900); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--nb-font-display); font-weight: 600; font-size: 0.95rem;
+}
+
 .nb-page-head { margin-bottom: 24px; }
 .nb-page-head h1 { margin-bottom: 4px; }
 .nb-subtitle { color: var(--nb-muted); margin: 0; }

@@ -38,11 +38,13 @@
   padding: 10px 12px; border-radius: 10px; color: #cfc9e2;
   font-size: 0.88rem; font-weight: 600; margin-bottom: 2px;
 }
+.nb-admin__nav a .nb-icon { flex: none; opacity: 0.85; }
 .nb-admin__nav a:hover { background: var(--nb-glass-fill); text-decoration: none; }
 .nb-admin__nav a.is-active { background: var(--nb-gold-500); color: #211405; }
+.nb-admin__nav a.is-active .nb-icon { opacity: 1; }
 
 .nb-admin__footer { padding: 14px 18px; border-top: 1px solid var(--nb-glass-line); font-size: 0.8rem; }
-.nb-admin__footer a { color: #cfc9e2; }
+.nb-admin__footer a { color: #cfc9e2; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
 
 .nb-admin__main { flex: 1; min-width: 0; }
 

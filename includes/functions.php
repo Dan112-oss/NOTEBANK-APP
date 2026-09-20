@@ -15,6 +15,37 @@ function e(?string $value): string
     return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8');
 }
 
+/**
+ * Tiny inline SVG icon set (feather-style, 20x20, currentColor stroke).
+ * Kept in one place so nav bars stay light — no external icon font/library.
+ */
+function nb_icon(string $name): string
+{
+    $paths = [
+        'home'        => '<path d="M3 10.5 10 4l7 6.5"/><path d="M5 9v7h10V9"/>',
+        'search'      => '<circle cx="9" cy="9" r="6"/><path d="m17 17-4-4"/>',
+        'cart'        => '<circle cx="8" cy="17" r="1.3"/><circle cx="15" cy="17" r="1.3"/><path d="M2 3h2l2 11h10l2-8H5.5"/>',
+        'folder'      => '<path d="M3 6h5l2 2h7v9H3z"/>',
+        'user'        => '<circle cx="10" cy="7" r="3.2"/><path d="M3.5 17c1.2-3.3 4-5 6.5-5s5.3 1.7 6.5 5"/>',
+        'logout'      => '<path d="M8 3H4v14h4"/><path d="M17 10H8"/><path d="m13 6 4 4-4 4"/>',
+        'grid'        => '<rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/>',
+        'building'    => '<rect x="4" y="3" width="12" height="14" rx="1"/><path d="M7 7h1M12 7h1M7 10h1M12 10h1M7 13h1M12 13h1"/>',
+        'layers'      => '<path d="m10 3 7 4-7 4-7-4z"/><path d="m3 11 7 4 7-4"/>',
+        'building2'   => '<rect x="3" y="8" width="6" height="9"/><rect x="11" y="3" width="6" height="14"/>',
+        'calendar'    => '<rect x="3" y="4" width="14" height="13" rx="1"/><path d="M3 8h14M7 2v4M13 2v4"/>',
+        'book'        => '<path d="M4 4h9a2 2 0 0 1 2 2v10H6a2 2 0 0 0-2 2V4Z"/>',
+        'file'        => '<path d="M6 2h6l3 3v13H6z"/><path d="M12 2v3h3"/>',
+        'upload'      => '<path d="M10 13V4M6.5 7.5 10 4l3.5 3.5"/><path d="M4 15h12"/>',
+        'card'        => '<rect x="2" y="5" width="16" height="11" rx="1.5"/><path d="M2 8.5h16"/>',
+        'list'        => '<path d="M7 5h10M7 10h10M7 15h10"/><circle cx="3.3" cy="5" r=".9"/><circle cx="3.3" cy="10" r=".9"/><circle cx="3.3" cy="15" r=".9"/>',
+        'users'       => '<circle cx="7" cy="7" r="2.8"/><circle cx="14.5" cy="8" r="2.2"/><path d="M2.3 16c.8-2.7 2.5-4 4.7-4s3.9 1.3 4.7 4"/><path d="M11.6 12.3c1.6.2 2.9 1.4 3.5 3.7"/>',
+        'chart'       => '<path d="M4 16V9M9 16V4M14 16v-6M17 16H3"/>',
+        'settings'    => '<circle cx="10" cy="10" r="2.6"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2M5.2 5.2l1.4 1.4M13.4 13.4l1.4 1.4M5.2 14.8l1.4-1.4M13.4 6.6l1.4-1.4"/>',
+    ];
+    $path = $paths[$name] ?? '';
+    return '<svg class="nb-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $path . '</svg>';
+}
+
 function redirect(string $path): never
 {
     $url = str_starts_with($path, 'http') ? $path : rtrim(APP_URL, '/') . '/' . ltrim($path, '/');

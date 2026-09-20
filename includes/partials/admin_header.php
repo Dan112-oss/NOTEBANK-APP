@@ -9,30 +9,30 @@ $__current = basename($_SERVER['SCRIPT_NAME']);
 
 $__nav = [
     'Overview' => [
-        ['dashboard.php', 'Dashboard'],
+        ['dashboard.php', 'Dashboard', 'grid'],
     ],
     'Academic Structure' => [
-        ['universities.php', 'Universities'],
-        ['faculties.php', 'Faculties'],
-        ['departments.php', 'Departments'],
-        ['levels.php', 'Levels'],
-        ['semesters.php', 'Semesters'],
-        ['courses.php', 'Courses'],
+        ['universities.php', 'Universities', 'building'],
+        ['faculties.php', 'Faculties', 'layers'],
+        ['departments.php', 'Departments', 'building2'],
+        ['levels.php', 'Levels', 'chart'],
+        ['semesters.php', 'Semesters', 'calendar'],
+        ['courses.php', 'Courses', 'book'],
     ],
     'Catalogue' => [
-        ['documents.php', 'Documents'],
-        ['uploads.php', 'Upload Document'],
+        ['documents.php', 'Documents', 'file'],
+        ['uploads.php', 'Upload Document', 'upload'],
     ],
     'Payments' => [
-        ['payments.php', 'Payment Queue'],
-        ['orders.php', 'Orders'],
+        ['payments.php', 'Payment Queue', 'card'],
+        ['orders.php', 'Orders', 'list'],
     ],
     'People' => [
-        ['students.php', 'Students'],
+        ['students.php', 'Students', 'users'],
     ],
     'Insights' => [
-        ['reports.php', 'Reports'],
-        ['settings.php', 'Settings'],
+        ['reports.php', 'Reports', 'chart'],
+        ['settings.php', 'Settings', 'settings'],
     ],
 ];
 ?><!doctype html>
@@ -43,8 +43,8 @@ $__nav = [
 <title><?= e($pageTitle ?? 'Admin') ?> — Note Bank Admin</title>
 <link rel="icon" href="<?= asset_url('images/favicon-32.png') ?>" type="image/png">
 <link rel="apple-touch-icon" href="<?= asset_url('images/apple-touch-icon.png') ?>">
-<link rel="stylesheet" href="<?= asset_url('css/base.css') ?>">
-<link rel="stylesheet" href="<?= asset_url('css/admin.css') ?>">
+<link rel="stylesheet" href="<?= asset_url('css/base.css') . '?v=2' ?>">
+<link rel="stylesheet" href="<?= asset_url('css/admin.css') . '?v=2' ?>">
 </head>
 <body>
 <div class="nb-admin">
@@ -56,14 +56,14 @@ $__nav = [
     <nav class="nb-admin__nav">
       <?php foreach ($__nav as $__group => $__links): ?>
         <div class="nb-admin__nav-label"><?= e($__group) ?></div>
-        <?php foreach ($__links as [$__href, $__label]): ?>
-          <a href="<?= e($__href) ?>" class="<?= $__current === $__href ? 'is-active' : '' ?>"><?= e($__label) ?></a>
+        <?php foreach ($__links as [$__href, $__label, $__icon]): ?>
+          <a href="<?= e($__href) ?>" class="<?= $__current === $__href ? 'is-active' : '' ?>"><?= nb_icon($__icon) ?><span><?= e($__label) ?></span></a>
         <?php endforeach; ?>
       <?php endforeach; ?>
     </nav>
     <div class="nb-admin__footer">
       Signed in as <strong><?= e($admin['full_name'] ?? '') ?></strong><br>
-      <a href="logout.php">Sign out</a>
+      <a href="logout.php"><?= nb_icon('logout') ?> Sign out</a>
     </div>
   </aside>
   <div class="nb-admin__main">
@@ -72,6 +72,7 @@ $__nav = [
       <h1><?= e($pageTitle ?? '') ?></h1>
       <div class="nb-admin__who">
         <span class="nb-stamp nb-stamp--unlocked"><?= e($admin['role'] ?? '') ?></span>
+        <div class="nb-avatar" title="<?= e($admin['full_name'] ?? '') ?>"><?= e(mb_strtoupper(mb_substr($admin['full_name'] ?? 'A', 0, 1))) ?></div>
       </div>
     </header>
     <main class="nb-admin__content">

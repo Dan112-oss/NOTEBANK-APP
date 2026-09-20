@@ -16,13 +16,16 @@
 
 .nb-student__sidenav { padding: 14px 10px; flex: 1; display: flex; flex-direction: column; gap: 2px; }
 .nb-student__sidenav a {
+  display: flex; align-items: center; gap: 10px;
   padding: 10px 14px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; color: #cfc9e2;
 }
+.nb-student__sidenav a .nb-icon { opacity: 0.85; }
 .nb-student__sidenav a.is-active { background: var(--nb-gold-500); color: #211405; }
+.nb-student__sidenav a.is-active .nb-icon { opacity: 1; }
 .nb-student__sidenav a:hover { text-decoration: none; background: var(--nb-glass-fill); }
 
 .nb-student__sidefoot { padding: 14px 18px; border-top: 1px solid var(--nb-glass-line); }
-.nb-student__sidefoot a { font-size: 0.84rem; font-weight: 600; color: #cfc9e2; }
+.nb-student__sidefoot a { display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 600; color: #cfc9e2; }
 .nb-student__sidefoot a:hover { color: var(--nb-danger); text-decoration: underline; }
 
 .nb-student__col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
@@ -103,6 +106,23 @@ a.nb-stat-card:hover { box-shadow: var(--nb-shadow-md); transform: translateY(-2
 }
 .nb-doc-card:hover { box-shadow: var(--nb-shadow-md); transform: translateY(-2px); }
 a.nb-doc-card { text-decoration: none; color: inherit; }
+
+.nb-dash-bottom { display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start; }
+.nb-dash-bottom__side { display: flex; flex-direction: column; gap: 16px; }
+.nb-account-card { padding: 20px; }
+.nb-account-card h3 { font-size: 1rem; margin-bottom: 14px; }
+.nb-account-card__row { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 0.86rem; color: var(--nb-navy-800); border-bottom: 1px solid var(--nb-line); }
+.nb-account-card__row:last-of-type { border-bottom: none; }
+.nb-account-card__row .nb-icon { color: var(--nb-gold-600); flex: none; }
+.nb-quick-link {
+  display: flex; align-items: center; gap: 10px; padding: 8px 4px;
+  font-size: 0.86rem; font-weight: 600; color: var(--nb-navy-800);
+}
+.nb-quick-link:hover { text-decoration: none; color: var(--nb-gold-600); }
+.nb-quick-link .nb-icon { color: var(--nb-muted); flex: none; }
+@media (max-width: 860px) {
+  .nb-dash-bottom { grid-template-columns: 1fr; }
+}
 .nb-doc-card__type {
   align-self: flex-start; font-family: var(--nb-font-mono); font-size: 0.68rem; text-transform: uppercase;
   letter-spacing: 0.06em; padding: 4px 10px; border-radius: 999px; font-weight: 600;
